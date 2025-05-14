@@ -22,7 +22,7 @@ A simple and fun Rock Paper Scissors game built using HTML, CSS, and JavaScript.
 ## 📸 Screenshots
 
 <!-- Add your screenshot image in project root and name it screenshot.png -->
-![Game Screenshot](./images/game.png)
+![Game Screenshot](./images/screenshot.png)
 
 ---
 
