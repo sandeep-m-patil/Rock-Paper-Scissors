@@ -8,42 +8,36 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
         }
 
         .title {
             color: #333;
             font-size: 32px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
-        .game-buttons {
+        .game-buttons,
+        button {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
+            background-color: white;
         }
 
         button {
             padding: 10px 20px;
             font-size: 18px;
             cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
             border: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #45a049;
         }
 
         .reset-button {
-            background-color: #ff4444;
+            background-color: #fe0a0a;
+            color: white;
             margin-top: 20px;
         }
 
@@ -51,7 +45,9 @@
             background-color: #cc0000;
         }
 
-        .js-result, .js-moves, .js-score {
+        .js-result,
+        .js-moves,
+        .js-score {
             font-size: 20px;
             margin: 10px 0;
             color: #333;
@@ -69,11 +65,11 @@
     <p class="title">Rock Paper Scissors</p>
 
     <div class="game-buttons">
-        <button onclick="playGame('Rock')">Rock</button>
-        <button onclick="playGame('Paper')">Paper</button>
-        <button onclick="playGame('Scissors')">Scissors</button>
+        <button onclick="playGame('Rock')"><img src="images/Rock.jpeg" width="100%" alt=""></button>
+        <button onclick="playGame('Paper')"><img src="images/Paper.jpeg" width="100%" alt=""></button>
+        <button onclick="playGame('Scissors')"><img src="images/Scissors.jpeg" width="100%" alt=""></button>
     </div>
-    
+
     <p class="js-result"></p>
     <p class="js-moves"></p>
     <p class="js-score"></p>
@@ -146,10 +142,11 @@
             document.querySelector('.js-result')
                 .innerHTML = result;
 
-            document.querySelector('.js-moves')
-                .innerHTML = playerMove && computerMove
-                    ? `You picked ${playerMove} - computer picked ${computerMove}`
-                    : '';
+            document.querySelector('.js-moves').innerHTML = `You
+                <img src="images/${playerMove}.jpeg" class="move-icon">
+                <img src="images/${computerMove}.jpeg" class="move-icon">
+                Computer`;
+
         }
     </script>
 </body>
