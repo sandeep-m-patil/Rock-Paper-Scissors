@@ -38,7 +38,7 @@
         .reset-button {
             background-color: #fe0a0a;
             color: white;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .reset-button:hover {
@@ -48,8 +48,8 @@
         .js-result,
         .js-moves,
         .js-score {
-            font-size: 20px;
-            margin: 10px 0;
+            font-size: 24px;
+            margin: 5px 0;
             color: #333;
             text-align: center;
         }
@@ -58,6 +58,10 @@
             font-weight: bold;
             color: #4CAF50;
         }
+
+        .move-icon {
+            height: 60px;
+        }
     </style>
 </head>
 
@@ -65,9 +69,9 @@
     <p class="title">Rock Paper Scissors</p>
 
     <div class="game-buttons">
-        <button onclick="playGame('Rock')"><img src="images/Rock.jpeg" width="100%" alt=""></button>
-        <button onclick="playGame('Paper')"><img src="images/Paper.jpeg" width="100%" alt=""></button>
-        <button onclick="playGame('Scissors')"><img src="images/Scissors.jpeg" width="100%" alt=""></button>
+        <button onclick="playGame('Rock')"><img src="images/Rock.jpeg" width="90%" alt=""></button>
+        <button onclick="playGame('Paper')"><img src="images/Paper.jpeg" width="90%" alt=""></button>
+        <button onclick="playGame('Scissors')"><img src="images/Scissors.jpeg" width="90%" alt=""></button>
     </div>
 
     <p class="js-result"></p>
@@ -133,11 +137,6 @@
             localStorage.setItem('score', JSON.stringify(score));
 
             updateScoreElement(playerMove, computerMove, result);
-        }
-
-        function updateScoreElement(playerMove = '', computerMove = '', result = '') {
-            document.querySelector('.js-score')
-                .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
             document.querySelector('.js-result')
                 .innerHTML = result;
@@ -146,6 +145,15 @@
                 <img src="images/${playerMove}.jpeg" class="move-icon">
                 <img src="images/${computerMove}.jpeg" class="move-icon">
                 Computer`;
+        }
+
+
+
+        function updateScoreElement(playerMove = '', computerMove = '', result = '') {
+            document.querySelector('.js-score')
+                .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+
+
 
         }
     </script>
